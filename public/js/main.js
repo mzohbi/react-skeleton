@@ -18964,11 +18964,11 @@ if (process.env.NODE_ENV === 'production') {
 var React = require('react'),
     CreateReactClass = require('create-react-class'),
     ListItem = require('./ListItem.jsx'),
-    ingredients = [{ 'id': 1, 'text': 'ham' }, { 'id': 2, 'text': 'cheese' }, { 'id': 3, 'text': 'potatoes' }],
+    colours = [{ 'id': 1, 'text': 'blue', 'style': { color: 'blue' } }, { 'id': 2, 'text': 'yellow', 'style': { color: 'yellow' } }, { 'id': 3, 'text': 'red', 'style': { color: 'red' } }],
     List = CreateReactClass({
   render: function () {
-    var listItems = ingredients.map(function (item) {
-      return React.createElement(ListItem, { key: item.id, ingredient: item.text });
+    var listItems = colours.map(function (item) {
+      return React.createElement(ListItem, { key: item.id, colour: item.text, style: item.style });
     });
 
     return React.createElement(
@@ -18991,8 +18991,8 @@ var React = require('react'),
       null,
       React.createElement(
         'h4',
-        null,
-        this.props.ingredient
+        { style: this.props.style },
+        this.props.colour
       )
     );
   }
@@ -19005,6 +19005,6 @@ var React = require('react'),
     ReactDOM = require('react-dom'),
     List = require('./components/List.jsx');
 
-ReactDOM.render(React.createElement(List, null), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(List, null), document.getElementById('rs-colours'));
 
 },{"./components/List.jsx":29,"react":28,"react-dom":25}]},{},[31]);

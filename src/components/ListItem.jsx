@@ -4,7 +4,7 @@ var React = require('react'),
       render: function() {
         return (
           <li>
-            <h4>{this.props.ingredient}</h4>
+            <h4 style={this.props.style}>{this.props.colour}</h4>
           </li>
         );
       }
